@@ -1,0 +1,6 @@
+{
+  "name": "Rate My Life",
+  "description": "তোমার জীবনের আসল রূপ ও ব্যক্তিত্বের পরিমাপ জানো ১৫টি আকর্ষণীয় প্রশ্নের উত্তরের মাধ্যমে।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

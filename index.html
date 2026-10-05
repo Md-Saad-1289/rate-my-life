@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rate My Life - তোমার জীবনের আসল স্কোর কত?</title>
+    <meta name="description" content="১৫টি আকর্ষণীয় ও বাস্তবসম্মত প্রশ্নের উত্তর দিয়ে জেনে নাও তোমার ব্যক্তিত্ব, সামাজিকতা, জীবনযাপন, উচ্চাকাঙ্ক্ষা ও আনন্দের আসল রূপ।" />
+    <meta property="og:title" content="Rate My Life - তোমার জীবনের আসল স্কোর কত?" />
+    <meta property="og:description" content="১৫টি বাস্তবসম্মত প্রশ্নের উত্তর দিয়ে জেনে নাও তোমার ব্যক্তিত্ব, সামাজিকতা ও জীবনের পূর্ণাঙ্গ বিশ্লেষণ।" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Hind Siliguri for authentic Bangla typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Universal App Header -->
+      <header class="app-header">
+        <a class="brand" id="brand-home-link" href="#" aria-label="Rate My Life Home">
+          Rate My Life
+          <span class="brand-dot"></span>
+        </a>
+        <div class="header-status" id="header-status-text">বাংলা সংস্করণ</div>
+      </header>
+
+      <!-- SCREEN 1: HOME -->
+      <section class="screen active" id="screen-home" aria-label="Home Screen">
+        <div class="card home-hero">
+          <div class="home-logo-wrap">
+            <span class="home-logo-badge">
+              <span class="brand-dot"></span>
+              লাইফ ও পার্সোনালিটি কুইজ
+            </span>
+          </div>
+
+          <h1 class="home-title">তোমার জীবন ও অভ্যাসের আসল মূল্যায়ন</h1>
+          
+          <p class="home-desc">
+            কখনো ভেবে দেখেছ তোমার ব্যক্তিত্ব, সামাজিক মেলামেশা আর দৈনন্দিন জীবনযাপনের আসল চিত্রটা কেমন? ১৫টি নির্ভেজাল ও খোলামেলা প্রশ্নের উত্তর দিয়ে জেনে নাও তোমার লাইফ স্কোর।
+          </p>
+
+          <button class="btn btn-primary btn-block" id="start-quiz-btn" type="button">
+            শুরু করুন
+          </button>
+
+          <div class="home-meta">
+            <span>১৫টি প্রশ্ন</span>
+            <span class="meta-dot">·</span>
+            <span>প্রায় ২ মিনিট</span>
+            <span class="meta-dot">·</span>
+            <span>সম্পূর্ণ গোপনীয়</span>
+          </div>
+
+          <div class="home-categories-preview">
+            <span class="cat-item-label">
+              <span class="cat-item-dot" style="background-color: var(--cat-personality)"></span>
+              ব্যক্তিত্ব
+            </span>
+            <span class="cat-item-label">
+              <span class="cat-item-dot" style="background-color: var(--cat-social)"></span>
+              সামাজিকতা
+            </span>
+            <span class="cat-item-label">
+              <span class="cat-item-dot" style="background-color: var(--cat-lifestyle)"></span>
+              জীবনযাপন
+            </span>
+            <span class="cat-item-label">
+              <span class="cat-item-dot" style="background-color: var(--cat-ambition)"></span>
+              উচ্চাকাঙ্ক্ষা
+            </span>
+            <span class="cat-item-label">
+              <span class="cat-item-dot" style="background-color: var(--cat-joy)"></span>
+              আনন্দ
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 2: QUIZ -->
+      <section class="screen" id="screen-quiz" aria-label="Quiz Screen">
+        <div class="card">
+          <!-- Quiz Top Info -->
+          <div class="quiz-top-bar">
+            <span class="quiz-brand-mini">Rate My Life</span>
+            <span class="quiz-progress-text" id="quiz-progress-label">প্রশ্ন ১ / ১৫</span>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="progress-track" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="15">
+            <div class="progress-fill" id="quiz-progress-fill"></div>
+          </div>
+
+          <!-- Category Kicker -->
+          <div class="quiz-category-tag" id="quiz-category-label">
+            <span class="cat-item-dot" id="quiz-category-dot"></span>
+            <span id="quiz-category-text">ব্যক্তিত্ব</span>
+          </div>
+
+          <!-- Question Title -->
+          <h2 class="quiz-question-title" id="quiz-question-text">
+            প্রশ্ন লোড হচ্ছে...
+          </h2>
+
+          <!-- Options Buttons Container -->
+          <div class="options-list" id="quiz-options-container" role="radiogroup">
+            <!-- Dynamically populated options -->
+          </div>
+
+          <!-- Quiz Footer with Back Button -->
+          <div class="quiz-footer">
+            <button class="back-btn" id="quiz-prev-btn" type="button" disabled>
+              ← আগের প্রশ্ন
+            </button>
+            <span class="home-meta" style="margin: 0; font-size: 0.8rem;">
+              উত্তর চাপলেই পরবর্তী প্রশ্নে যাবে
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 3: ANALYZING -->
+      <section class="screen" id="screen-analyzing" aria-label="Analyzing Screen">
+        <div class="card analyzing-wrap">
+          <div class="analyzer-pulse" aria-hidden="true">
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring"></div>
+            <div class="pulse-core"></div>
+          </div>
+          <h2 class="analyzing-title">তোমার জীবন বিশ্লেষণ করা হচ্ছে...</h2>
+          <p class="analyzing-sub" id="analyzing-status-sub">তোমার উত্তরগুলো বিন্যাস করা হচ্ছে...</p>
+        </div>
+      </section>
+
+      <!-- SCREEN 4: LIFE REPORT -->
+      <section class="screen" id="screen-report" aria-label="Life Report Screen">
+        <div class="card">
+          <!-- Overall Score & Life Type -->
+          <div class="report-header">
+            <div class="score-display-box">
+              <span class="score-number" id="report-overall-score">৮২</span>
+              <span class="score-total">/ ১০০</span>
+            </div>
+            <h2 class="life-type-badge" id="report-life-type">শান্ত স্বপ্নবাজ</h2>
+            <p class="life-type-desc" id="report-life-desc">
+              তোমার জীবনের মূল্যায়ন প্রস্তুত।
+            </p>
+          </div>
+
+          <!-- 5 Category Scores -->
+          <div class="report-section-title">
+            <span>বিভাগভিত্তিক ফলাফল</span>
+            <span style="font-size: 0.825rem; font-weight: normal; color: var(--text-muted)">শতকরা হার</span>
+          </div>
+
+          <div class="category-bars-list" id="report-category-bars">
+            <!-- Dynamically generated bars for 5 categories -->
+          </div>
+
+          <!-- Fun Statistics -->
+          <div class="report-section-title">
+            <span>মজার পরিসংখ্যান</span>
+            <span style="font-size: 0.825rem; font-weight: normal; color: var(--text-muted)">উত্তরের ভিত্তিতে</span>
+          </div>
+
+          <div class="fun-stats-grid" id="report-fun-stats">
+            <!-- Dynamically generated 5 fun statistics -->
+          </div>
+
+          <!-- Final Encouraging Message -->
+          <div class="final-verdict-note" id="report-final-message">
+            জীবন কোনো প্রতিযোগিতা নয়, বরং এক অনুপম পরিভ্রমণ। নিজের ছন্দ বজায় রাখো আর প্রতিদিনের ছোট ছোট আনন্দকে উদযাপন করো।
+          </div>
+
+          <!-- Actions -->
+          <div class="report-actions">
+            <button class="btn btn-primary btn-block" id="go-to-share-btn" type="button">
+              ফলাফলের ছবি দেখুন ও শেয়ার করুন
+            </button>
+            <button class="btn btn-secondary btn-block" id="play-again-report-btn" type="button">
+              আবার খেলুন
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 5: SHARE RESULT -->
+      <section class="screen" id="screen-share" aria-label="Share Screen">
+        <div class="card">
+          <div class="share-screen-header">
+            <h2 class="share-title">শেয়ার কার্ড</h2>
+            <p class="share-desc">কার্ডটি সংরক্ষণ করো অথবা বন্ধুদের সাথে শেয়ার করো</p>
+          </div>
+
+          <!-- Canvas Element for dynamic generation & preview -->
+          <div class="canvas-card-wrapper">
+            <canvas id="share-result-canvas" class="share-canvas" width="1080" height="1350" aria-label="রেজাল্ট কার্ড ইমেজ"></canvas>
+          </div>
+
+          <!-- Share Actions -->
+          <div class="share-buttons-stack">
+            <button class="btn btn-primary btn-block" id="download-image-btn" type="button">
+              ছবি ডাউনলোড করুন
+            </button>
+            <button class="btn btn-secondary btn-block" id="share-api-btn" type="button">
+              শেয়ার করুন
+            </button>
+            <button class="btn btn-ghost btn-block" id="play-again-share-btn" type="button">
+              আবার খেলুন
+            </button>
+            <button class="btn btn-ghost btn-block" id="back-to-report-btn" type="button">
+              ← পূর্ণাঙ্গ রিপোর্টে ফিরে যান
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- App Footer -->
+      <footer class="app-footer">
+        <p>Rate My Life • সম্পূর্ণ গোপনীয় ও সুরক্ষিত মূল্যায়ন</p>
+      </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="app-toast" role="alert" aria-live="polite"></div>
+
+    <!-- Application JavaScript -->
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
